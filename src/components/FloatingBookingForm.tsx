@@ -59,7 +59,7 @@ export function FloatingBookingForm() {
       <motion.button
         type="button"
         onClick={openBooking}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full bg-rose-600 px-5 py-3 text-white shadow-lg shadow-rose-900/25 transition-shadow hover:shadow-xl hover:shadow-rose-900/30 sm:bottom-8 sm:right-8"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-sm bg-rose-600 px-5 py-3 font-display text-xs font-semibold uppercase tracking-widest text-white shadow-lg shadow-stone-950/50 transition-all hover:bg-rose-500 sm:bottom-8 sm:right-8"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         aria-label="Online Buchen"
@@ -84,10 +84,10 @@ export function FloatingBookingForm() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 24 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed inset-x-4 bottom-4 top-auto z-50 max-h-[90vh] overflow-y-auto rounded-2xl border border-stone-200 bg-white shadow-2xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:max-h-[85vh] sm:max-w-lg sm:-translate-x-1/2 sm:-translate-y-1/2"
+              className="fixed inset-x-4 bottom-4 top-auto z-50 max-h-[90vh] overflow-y-auto rounded-sm border-2 border-stone-200 bg-white shadow-2xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:max-h-[85vh] sm:max-w-lg sm:-translate-x-1/2 sm:-translate-y-1/2"
             >
               <div className="sticky top-0 z-10 flex items-center justify-between border-b border-stone-100 bg-white px-6 py-4">
-                <h3 className="font-serif text-xl font-medium text-stone-800">Termin buchen</h3>
+                <h3 className="font-display text-lg font-semibold text-stone-800">Termin buchen</h3>
                 <button
                   type="button"
                   onClick={closeBooking}
@@ -111,7 +111,7 @@ export function FloatingBookingForm() {
                     <button
                       type="button"
                       onClick={closeBooking}
-                      className="mt-6 rounded-full bg-rose-600 px-6 py-2 font-medium text-white hover:bg-rose-700"
+                      className="mt-6 rounded-sm bg-rose-600 px-6 py-2 font-display text-sm font-semibold uppercase tracking-widest text-white hover:bg-rose-500"
                     >
                       Schliessen
                     </button>
@@ -230,7 +230,7 @@ export function FloatingBookingForm() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="w-full rounded-full bg-rose-600 py-3 font-medium text-white transition-colors hover:bg-rose-700 disabled:opacity-70"
+                      className="w-full rounded-sm bg-rose-600 py-3 font-display text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:bg-rose-500 disabled:opacity-70"
                     >
                       {status === "sending" ? "Wird gesendet..." : "Anfrage senden"}
                     </button>

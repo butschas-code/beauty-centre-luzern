@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ContactSection } from "./ContactSection";
 import { ContactForm } from "./ContactForm";
 import { PageHero } from "./PageHero";
@@ -15,9 +14,11 @@ export function ContactPage() {
         subtitle="Kontaktieren Sie uns – wir beraten Sie gerne."
       />
       <ContactSection />
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <ContactForm />
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
+          <div className="mx-auto max-w-2xl p-8 sm:p-12">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </div>

@@ -6,16 +6,19 @@ import { CalendarCheck, Sparkles, Heart } from "lucide-react";
 const steps = [
   {
     icon: CalendarCheck,
+    num: "01",
     title: "Termin buchen",
     description: "Wählen Sie online Ihren Wunschtermin oder rufen Sie uns an.",
   },
   {
     icon: Sparkles,
+    num: "02",
     title: "Behandlung geniessen",
     description: "Wir nehmen uns Zeit für Sie und Ihre individuellen Bedürfnisse.",
   },
   {
     icon: Heart,
+    num: "03",
     title: "Strahlend weitergehen",
     description: "Verlassen Sie uns entspannt und mit strahlender Haut.",
   },
@@ -23,41 +26,44 @@ const steps = [
 
 export function ProcessSection() {
   return (
-    <section className="bg-stone-50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="bg-stone-100 py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14 text-center"
+          className="mb-24 p-8 sm:p-12"
         >
-          <h2 className="font-serif text-3xl font-light text-stone-800 sm:text-4xl">
-            So einfach geht es
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-stone-600">
-            Von der Buchung bis zur Behandlung – alles unkompliziert.
+          <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-rose-600/80">
+            So einfach
           </p>
+          <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+            Von der Buchung bis zur Behandlung
+          </h2>
         </motion.div>
 
-        <div className="grid gap-12 sm:grid-cols-3">
+        <div className="grid gap-16 sm:grid-cols-3 lg:gap-20">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative text-center"
+                className="p-8 sm:p-10"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-100 text-rose-600">
-                  <Icon className="h-8 w-8" />
+                <span className="font-display text-6xl font-bold text-stone-200/80 sm:text-7xl">
+                  {step.num}
+                </span>
+                <div className="mt-8 flex h-14 w-14 items-center justify-center bg-stone-900 text-white">
+                  <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-6 font-serif text-lg font-medium text-stone-800">
+                <h3 className="mt-10 font-display text-xl font-semibold text-stone-900">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm text-stone-600">{step.description}</p>
+                <p className="mt-6 text-base leading-relaxed text-stone-600">{step.description}</p>
               </motion.div>
             );
           })}

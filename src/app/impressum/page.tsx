@@ -10,32 +10,37 @@ export default function ImpressumPage() {
   const fullAddress = `${siteConfig.contact.address}, ${siteConfig.contact.zip} ${siteConfig.contact.city}`;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
-      <h1 className="font-serif text-3xl font-light text-stone-800">Impressum</h1>
-      <div className="mt-6 space-y-4 text-stone-600">
-        <p className="font-medium text-stone-800">{siteConfig.name}</p>
-        <p>{fullAddress}</p>
-        <p>
-          Telefon:{" "}
-          <a href={siteConfig.contact.phoneHref} className="text-rose-600 hover:underline">
-            {siteConfig.contact.phone}
-          </a>
-        </p>
-        <p>
-          E-Mail:{" "}
-          <a
-            href={`mailto:${siteConfig.contact.email}`}
-            className="text-rose-600 hover:underline"
-          >
-            {siteConfig.contact.email}
-          </a>
-        </p>
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
+        <article className="max-w-3xl p-8 sm:p-12">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+            Impressum
+          </h1>
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-stone-600">
+            <p className="font-display font-semibold text-stone-900">{siteConfig.name}</p>
+            <p>{fullAddress}</p>
+            <p>
+              Telefon:{" "}
+              <a href={siteConfig.contact.phoneHref} className="text-rose-600 hover:underline">
+                {siteConfig.contact.phone}
+              </a>
+            </p>
+            <p>
+              E-Mail:{" "}
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="text-rose-600 hover:underline"
+              >
+                {siteConfig.contact.email}
+              </a>
+            </p>
+            <p className="mt-8 text-base text-stone-500">
+              Ergänzen Sie bei Bedarf weitere Angaben gemäss schweizerischem Recht (z. B. UID,
+              Handelsregistereintrag).
+            </p>
+          </div>
+        </article>
       </div>
-      <p className="mt-8 text-sm text-stone-500">
-        {/* PLACEHOLDER: Add full legal entity details (UID, Handelsregister, etc.) as required by Swiss law */}
-        Ergänzen Sie bei Bedarf weitere Angaben gemäss schweizerischem Recht (z. B. UID,
-        Handelsregistereintrag).
-      </p>
     </div>
   );
 }

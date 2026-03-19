@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-const GOOGLE_MAPS_REVIEWS_URL =
-  "https://www.google.com/maps/place/Beauty+Center+im+Rank,+Oberdierikonerstrasse+4,+6030+Ebikon,+Switzerland";
-
 interface GoogleReview {
   author_name: string;
   profile_photo_url?: string;
@@ -53,18 +50,15 @@ export function Testimonials() {
 
   if (loading) {
     return (
-      <section className="bg-stone-50 py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-14 text-center">
-            <h2 className="font-serif text-3xl font-light text-stone-800 sm:text-4xl">
+      <section className="bg-stone-100 py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
+          <div className="p-12">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
               Was unsere Kunden sagen
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-stone-600">
-              Entdecken Sie Bewertungen von zufriedenen Kundinnen und Kunden auf Google.
-            </p>
           </div>
-          <div className="flex min-h-[240px] items-center justify-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-2 border-rose-200 border-t-rose-600" />
+          <div className="flex min-h-[280px] items-center justify-center p-12">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-stone-300 border-t-rose-600" />
           </div>
         </div>
       </section>
@@ -76,18 +70,21 @@ export function Testimonials() {
   }
 
   return (
-    <section className="bg-stone-50 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="bg-stone-100 py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-14 text-center"
+          className="mb-24 p-8 sm:p-12"
         >
-          <h2 className="font-serif text-3xl font-light text-stone-800 sm:text-4xl">
+          <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-rose-600/80">
+            Bewertungen
+          </p>
+          <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
             Was unsere Kunden sagen
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-stone-600">
+          <p className="mt-10 max-w-xl text-lg leading-relaxed text-stone-600">
             Entdecken Sie Bewertungen von zufriedenen Kundinnen und Kunden auf Google.
           </p>
         </motion.div>
@@ -98,7 +95,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="relative mx-auto max-w-3xl"
         >
-          <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white p-8 shadow-sm sm:p-10">
+          <div className="overflow-hidden border-2 border-stone-200 bg-white p-12 sm:p-16">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -106,9 +103,9 @@ export function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
-                className="min-h-[180px]"
+                className="min-h-[200px]"
               >
-                <div className="mb-4 flex items-center gap-1">
+                <div className="mb-8 flex items-center gap-1">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <Star
                       key={star}
@@ -120,10 +117,10 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <blockquote className="text-lg leading-relaxed text-stone-700 sm:text-xl">
+                <blockquote className="font-serif text-xl leading-relaxed text-stone-700 sm:text-2xl">
                   "{reviews[currentIndex].text}"
                 </blockquote>
-                <footer className="mt-6 flex items-center justify-between">
+                <footer className="mt-12 flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     {reviews[currentIndex].profile_photo_url && (
                       <img
@@ -133,10 +130,10 @@ export function Testimonials() {
                       />
                     )}
                     <div>
-                      <cite className="not-italic font-medium text-stone-800">
+                      <cite className="not-italic font-display font-semibold text-stone-900">
                         {reviews[currentIndex].author_name}
                       </cite>
-                      <p className="text-sm text-stone-500">
+                      <p className="mt-1 text-sm text-stone-500">
                         {reviews[currentIndex].relative_time_description}
                       </p>
                     </div>
@@ -151,7 +148,7 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={() => goTo(currentIndex - 1)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 rounded-full bg-white p-2 shadow-md transition-colors hover:bg-stone-50 sm:-translate-x-12"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 rounded-sm border-2 border-stone-200 bg-white p-2 transition-colors hover:border-rose-500 hover:bg-rose-50 sm:-translate-x-12"
                 aria-label="Vorherige Bewertung"
               >
                 <ChevronLeft className="h-6 w-6 text-stone-600" />
@@ -159,7 +156,7 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={() => goTo(currentIndex + 1)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 rounded-full bg-white p-2 shadow-md transition-colors hover:bg-stone-50 sm:translate-x-12"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 rounded-sm border-2 border-stone-200 bg-white p-2 transition-colors hover:border-rose-500 hover:bg-rose-50 sm:translate-x-12"
                 aria-label="Nächste Bewertung"
               >
                 <ChevronRight className="h-6 w-6 text-stone-600" />
@@ -168,7 +165,7 @@ export function Testimonials() {
           )}
 
           {reviews.length > 1 && (
-            <div className="mt-6 flex justify-center gap-2">
+            <div className="mt-16 flex justify-center gap-2 p-4">
               {reviews.map((_, i) => (
                 <button
                   key={i}

@@ -12,7 +12,7 @@ export function ContactForm() {
     <form
       action="#"
       method="POST"
-      className="mx-auto max-w-2xl space-y-6 rounded-2xl border border-stone-200 bg-white p-8 shadow-sm"
+      className="space-y-6 border-2 border-stone-200 bg-white p-8 sm:p-12"
       encType="application/x-www-form-urlencoded"
     >
       <input type="hidden" name="form-name" value="contact" />
@@ -26,7 +26,7 @@ export function ContactForm() {
             id="name"
             name="name"
             required
-            className="w-full rounded-lg border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
+            className="w-full rounded-sm border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
             placeholder="Ihr Name"
           />
         </div>
@@ -39,7 +39,7 @@ export function ContactForm() {
             id="email"
             name="email"
             required
-            className="w-full rounded-lg border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
+            className="w-full rounded-sm border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
             placeholder="ihre@email.ch"
           />
         </div>
@@ -52,7 +52,7 @@ export function ContactForm() {
           type="tel"
           id="phone"
           name="phone"
-          className="w-full rounded-lg border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
+          className="w-full rounded-sm border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
           placeholder="041 123 45 67"
         />
       </div>
@@ -65,13 +65,13 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full resize-none rounded-lg border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
+          className="w-full resize-none rounded-sm border border-stone-200 px-4 py-3 text-stone-800 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-100"
           placeholder="Ihre Nachricht..."
         />
       </div>
       <button
         type="submit"
-        className="w-full rounded-full bg-rose-600 py-3 font-medium text-white transition-colors hover:bg-rose-700 sm:w-auto sm:px-8"
+        className="rounded-sm bg-rose-600 px-10 py-4 font-display text-sm font-semibold uppercase tracking-widest text-white transition-colors hover:bg-rose-500"
       >
         Nachricht senden
       </button>

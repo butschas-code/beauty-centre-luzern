@@ -3,7 +3,6 @@ import { ServicesPreview } from "@/components/ServicesPreview";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { AboutSection } from "@/components/AboutSection";
 import { ModeAperoSection } from "@/components/ModeAperoSection";
-import { ProcessSection } from "@/components/ProcessSection";
 import { Testimonials } from "@/components/Testimonials";
 import { InstagramSection } from "@/components/InstagramSection";
 import { FAQ } from "@/components/FAQ";
@@ -18,7 +17,6 @@ export default function HomePage() {
       <WhyChooseUs />
       <AboutSection />
       <ModeAperoSection />
-      <ProcessSection />
       <Testimonials />
       <InstagramSection />
       <FAQ />

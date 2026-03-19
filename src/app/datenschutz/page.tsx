@@ -7,25 +7,32 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
-      <h1 className="font-serif text-3xl font-light text-stone-800">Datenschutz</h1>
-      <p className="mt-6 text-stone-600">
-        {/* PLACEHOLDER: Replace with actual Datenschutzerklärung from existing site or legal counsel */}
-        Die Datenschutzerklärung finden Sie auf der bestehenden Website:{" "}
-        <a
-          href="https://www.beauty-center-luzern.ch/Datenschutz.htm"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-rose-600 hover:underline"
-        >
-          beauty-center-luzern.ch
-        </a>
-        .
-      </p>
-      <p className="mt-4 text-sm text-stone-500">
-        Bitte ersetzen Sie diesen Inhalt durch die vollständige, für diese Website gültige
-        Datenschutzerklärung.
-      </p>
+    <div className="py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-8 sm:px-12 lg:px-20">
+        <article className="max-w-3xl p-8 sm:p-12">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
+            Datenschutz
+          </h1>
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-stone-600">
+            <p>
+              Die Datenschutzerklärung finden Sie auf der bestehenden Website:{" "}
+              <a
+                href="https://www.beauty-center-luzern.ch/Datenschutz.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-600 hover:underline"
+              >
+                beauty-center-luzern.ch
+              </a>
+              .
+            </p>
+            <p className="text-base text-stone-500">
+              Bitte ersetzen Sie diesen Inhalt durch die vollständige, für diese Website gültige
+              Datenschutzerklärung.
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }

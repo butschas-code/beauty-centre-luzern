@@ -34,6 +34,17 @@ Deploy to Vercel: connect the repo or run `vercel` CLI.
 - `src/components/` – Reusable section components
 - `src/app/` – Pages and layout
 
+## Instagram Feed
+
+The "Folgen Sie uns" section pulls images from [@beautycenterimrank](https://www.instagram.com/beautycenterimrank/).
+
+**To show real Instagram posts:**
+1. Copy `.env.example` to `.env.local`
+2. Add `INSTAGRAM_ACCESS_TOKEN` – get it from [Meta for Developers](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/get-started) (Instagram Business/Creator account + Facebook Page required)
+3. Restart the dev server
+
+Without the token, the section shows fallback images from the site.
+
 ## Placeholders to Verify
 
 1. **Google Maps embed** – Replace the OpenStreetMap iframe in `ContactSection.tsx` with the embed code from Google Maps (Beauty Center im Rank → Share → Embed map).
