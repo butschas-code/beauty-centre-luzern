@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Beauty Center im Rank – Website
 
-## Getting Started
+Production-ready website for Beauty Center im Rank, a beauty and cosmetics salon in Ebikon (Luzern region).
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion (subtle animations)
+- Lucide React (icons)
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build & Deploy (Vercel)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Deploy to Vercel: connect the repo or run `vercel` CLI.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/data/site.ts` – Business data (edit contact, services, pricing here)
+- `src/components/` – Reusable section components
+- `src/app/` – Pages and layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Placeholders to Verify
 
-## Deploy on Vercel
+1. **Google Maps embed** – Replace the OpenStreetMap iframe in `ContactSection.tsx` with the embed code from Google Maps (Beauty Center im Rank → Share → Embed map).
+2. **Contact form** – Connect `ContactForm.tsx` to Formspree, Netlify Forms, or your backend.
+3. **Legal pages** – Replace placeholder content in `datenschutz` and `impressum` with actual legal text.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Images are in `public/images/`. Matched to content by filename (header.jpg, byonik.jpg, etc.).
